@@ -1,0 +1,22 @@
+def longest_words(file):
+    import os.path
+    if not os.path.exists(file):
+        print ("file not found")
+    else:
+        file1 = open(file)
+        last_words = []
+        for line in file1:
+            line = line.strip().split()
+            for word in line:
+                word = word.split(",")
+                for w in word:
+                    w =  w.split("-")
+                    for dot in w:
+                        dot = dot.split(".")
+                        for final_w in dot:
+                            last_words.append(final_w)
+        
+        sort_words = sorted(last_words, key = len, reverse= True)
+        print (sort_words[:5])
+       
+longest_words('ex3_text.txt')
