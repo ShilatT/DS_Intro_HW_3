@@ -1,0 +1,15 @@
+def read_line (n, file):
+    import os.path
+    if not isinstance (n, int):
+        print ("invalid input detected")
+    elif not os.path.exists(file):
+        print ("file not found")
+    else:
+       text = open(file, 'r')
+       lenght = list(text)
+       if n > len(lenght) or n <= 0:
+           print ("line" , n , "doesn't exist")
+       else:
+           print (lenght[n-1])
+
+read_line(3,'ex3_text.txt')
